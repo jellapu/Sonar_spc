@@ -13,8 +13,8 @@ pipeline {
         }
         stage('build') {
             steps {
-                withSonarQubeEnv(installationName: 'SONAR_9.2.1', envOnly: true, credentialsId: 'SONAR_TOKEN') {
-                    sh "/usr/local/apache-maven-3.8.4/bin/mvn clean package sonar:sonar"
+                withSonarQubeEnv(installationName: 'SONAR_9.4', envOnly: true, credentialsId: 'SONAR_TOKEN') {
+                    sh "/usr/local/apache-maven-3.8.5/bin/mvn clean package sonar:sonar"
 					echo "${env.SONAR_HOST_URL}"
 
                 }
