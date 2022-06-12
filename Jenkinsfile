@@ -5,7 +5,7 @@ pipeline {
         pollSCM('*/5 * * * *')
     }
     tools {
-		maven 'MVN_3.8.4'
+		maven 'MVN_3.8.5'
 	}          
     stages {
         stage('scm') {
