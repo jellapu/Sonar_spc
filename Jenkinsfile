@@ -4,8 +4,8 @@ pipeline {
         cron('45 23 * * 1-5')
         pollSCM('*/5 * * * *')
     }
-    
-       
+
+
     stages {
         stage('scm') {
             steps {
@@ -13,7 +13,7 @@ pipeline {
                 git url: 'https://github.com/jellapu/Sonar_spc.git', branch: 'main'
             }
         }
-        tage('build') {
+        stage('build') {
             steps {
                 withSonarQubeEnv(installationName: 'SONAR_9.4') {
                     sh "mvn clean package sonar:sonar"                                  
